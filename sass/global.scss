@@ -1,0 +1,52 @@
+body {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    background-color: beige;
+}
+
+header {
+    text-align: center;
+    border: solid black 1px;
+}
+
+form {
+    text-align: center;
+}
+
+main {
+    text-align: center;
+}
+
+.income-container {
+    border: solid black 1px;
+}
+
+.expenses-container {
+    border: solid black 1px;
+}
+
+img {
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    .income-container {
+        float: left;
+        width: 50%;
+    }
+
+    .expenses-container {
+        float: right;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .everything {
+        height: 750px;
+        width: 750px;
+    }
+}
+
+

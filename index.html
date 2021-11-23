@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Din Ekonomi</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="JS/main.js" defer></script>
+</head>
+
+<body>
+<div class="everything">
+    <header>
+        <h1>Din Ekonomi</h1>
+        <h2>Vet du hur mycket pengar som går till mat varje månad? Få koll på din ekonomi genom appen Din Ekonomi.</h2>
+        <h2>Disponibelt belopp</h2>
+        <div></div>
+    </header>
+
+    <form>
+        <select id="input-type">
+            <option value="choose" class="choose">--Inkomst eller utgift--</option>
+            <option value="+" class="plus">+</option>
+            <option value="-" class="minus">-</option>
+        </select>
+
+        <input type="number" id="number" placeholder="kr">
+        <input type="text" id="text" placeholder="beskrivning">
+    
+        <!--<select name="pets" id="pet-select">
+            <option value="">--Kategori--</option>
+            <option value="">Inkomst</option>
+            <option value="home">Hushåll</option>
+            <option value="food">Mat & Dryck</option>
+            <option value="transport">Transport</option>
+            <option value="">Nöje</option>
+            <option value="">Övrigt</option>
+        </select>-->
+
+        <button>Lägg till</button>
+    </form>
+
+
+    <main>
+        <article class="income-container">
+            <h2>Inkomster</h2>
+            <div class="income"></div>
+        </article>
+
+        <article class="expenses-container">
+            <h2>Utgifter</h2>
+            <div class="expenses"></div>
+        </article>
+
+        <article>
+            <h2>Transaktioner</h2>
+            <div class="transaction-container"></div>
+        </article>
+    </main>
+    <img src="bilder/money-g9c739e3f6_1920.jpg" alt="staplade kronor i en rad">
+
+</div>
+</body>
+</html>
