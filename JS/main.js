@@ -14,56 +14,51 @@ function countBudget(e) {
 
 //1. om användare väljer + ska description och value hamna i inkomst-lista diven
 //Pusha in kostnader i kostnadsLista
-    if(option.value =="+"){
-        const description = document.querySelector("#text").value;
-        const value = document.querySelector("#number").value;
 
+    const description = document.querySelector("#text").value;
+    const value = document.querySelector("#number").value;
+
+    if(option.value =="+") {
+        // gör nått om det är positivt värde
         incomeList.push(value)
         const div = document.querySelector(".income-container");
 
         div.innerHTML += `<li> ${description}    ${value}</li>`
-    }
-
-
-    const minusOption = document.querySelector(".minus").textContent;
-    console.log(minusOption);
-//2. om användare väljer - ska description och value hamna i kostnad-lista i diven
-//Pusha in inkomster i inkomstLista
-
-    if(option.value =="-"){
-        const description = document.querySelector("#text").value;
-        const value = document.querySelector("#number").value;
-
+    } else if (option.value == "-") {
+        // gör nått om det är negativt värde
         expenseList.push(value)
         const div = document.querySelector(".expenses-container");
 
         div.innerHTML += `<li> ${description}   ${value}</li>`
+    } else {
+        alert("App app app... du måste göra ett val");
     }
+
+//2. om användare väljer - ska description och value hamna i kostnad-lista i diven
+//Pusha in inkomster i inkomstLista
 
     console.log(expenseList , incomeList)
 
     var kostnadSumma = 0.0;
-    for( var i= 0; i<expenseList.length; i++){
+
+    for(var i= 0; i<expenseList.length; i++){
     //console.log(kostnadLista[i]);
         kostnadSumma += parseFloat(expenseList[i]);
     }
 
-    var inkomstSumma =0.0;
+    var inkomstSumma = 0.0;
+
     for( var i=0; i<incomeList.length; i++){
     //console.log(inkomstLista[i]);
         inkomstSumma += parseFloat(incomeList[i]);
     }
+
     console.log(inkomstSumma, kostnadSumma)
 
     const val= inkomstSumma-kostnadSumma
     const vinstDiv = document.querySelector(".transaction-container");
     vinstDiv.textContent = val
-
-    if(option.value=="choose"){
-        alert("App app app... du måste göra ett val");
-    }
 }
-
 
 //Pusha in bägge i transaktionerLista
 
