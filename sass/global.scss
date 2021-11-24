@@ -7,7 +7,12 @@ body {
 
 header {
     text-align: center;
-    border: solid black 1px;
+    border-bottom: 2px solid black;
+}
+
+.transaction {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
@@ -18,12 +23,8 @@ main {
     text-align: center;
 }
 
-.income-container {
-    border: solid black 1px;
-}
-
-.expenses-container {
-    border: solid black 1px;
+.container {
+    margin-bottom: 20px;
 }
 
 img {
@@ -31,22 +32,35 @@ img {
 }
 
 @media screen and (min-width: 769px) {
+    .container {
+        display: flex;
+    }
+       
     .income-container {
-        float: left;
         width: 50%;
     }
 
     .expenses-container {
-        float: right;
         width: 50%;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .everything {
-        height: 750px;
-        width: 750px;
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
     }
+
+    .everything {
+        width: 750px;
+        border: 5px solid black;
+        background-color: beige;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
 }
 
 

@@ -14,31 +14,31 @@ function countBudget(e) {
 
 //1. om användare väljer + ska description och value hamna i inkomst-lista diven
 //Pusha in kostnader i kostnadsLista
+//2. om användare väljer - ska description och value hamna i kostnad-lista i diven
+//Pusha in inkomster i inkomstLista
 
     const description = document.querySelector("#text").value;
     const value = document.querySelector("#number").value;
 
     if(option.value =="+") {
-        // gör nått om det är positivt värde
+        // gör något om det är positivt värde
         incomeList.push(value)
         const div = document.querySelector(".income-container");
 
         div.innerHTML += `<li> ${description}    ${value}</li>`
     } else if (option.value == "-") {
-        // gör nått om det är negativt värde
+        // gör något om det är negativt värde
         expenseList.push(value)
         const div = document.querySelector(".expenses-container");
 
         div.innerHTML += `<li> ${description}   ${value}</li>`
     } else {
+        // gör något om inget val görs
         alert("App app app... du måste göra ett val");
     }
 
-//2. om användare väljer - ska description och value hamna i kostnad-lista i diven
-//Pusha in inkomster i inkomstLista
-
     console.log(expenseList , incomeList)
-
+    //befintligt saldo i en annan div
     var kostnadSumma = 0.0;
 
     for(var i= 0; i<expenseList.length; i++){
@@ -71,7 +71,6 @@ function countBudget(e) {
 
 //Detta är en sämre kod. Det finns bättre lösningar
 //Den bör göras mer optimerat. 
-//Dåligt med tre if-statements
 //Läser in samma data flera gånger
 //Läser in alla tre statements
 //Finns enklare lösningar v
