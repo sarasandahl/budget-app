@@ -6,32 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Din Ekonomi</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script src="JS/main.js" defer></script>
 </head>
 
 <body>
-<div class="everything">
+    <div class="everything">
 
-    <header>
-        <h1>Din Ekonomi</h1>
-        <h3>Vet du hur mycket pengar som går till mat varje månad? Få koll på din ekonomi genom appen Din Ekonomi.</h3>
-    </header>
-
-    <div class="transaction">  
-        <h2 >Disponibelt belopp</h2>
-        <div class="transaction-container"></div>
-    </div>  
-
-    <form>
-        <select id="input-type">
-            <option value="choose" class="choose">--Inkomst eller utgift--</option>
-            <option value="+" class="plus">+</option>
-            <option value="-" class="minus">-</option>
-        </select>
-
-        <input type="number" id="number" placeholder="kr">
-        <input type="text" id="text" placeholder="beskrivning">
+        <header>
+            <h1><strong>Din Ekonomi</strong></h1>
+            <h3>Vet du hur mycket pengar som du lägger på mat varje månad? Få koll på din ekonomi genom appen <i>Din Ekonomi</i>.</h3>
+        </header>
     
+        <div class="transaction">  
+            <h2 >Disponibelt belopp💰 </h2>
+            <div class="transaction-container"></div>
+        </div>  
+
+        <form>
+            <select id="input-type">
+                <option value="choose" class="choose">--Inkomst eller utgift--</option>
+                <option value="+" class="plus">+</option>
+                <option value="-" class="minus">-</option>
+            </select>
+            <input type="number" id="number" placeholder="kr">
+            <input type="text" id="text" placeholder="beskrivning">
         <!--<select name="pets" id="pet-select">
             <option value="">--Kategori--</option>
             <option value="">Inkomst</option>
@@ -41,24 +42,23 @@
             <option value="">Nöje</option>
             <option value="">Övrigt</option>
         </select>-->
+            <button>Lägg till</button>
+        </form>
 
-        <button>Lägg till</button>
-    </form>
+        <main class="container">
+            <article class="income-container">
+                <h2>Inkomster🤑 
+                </h2>
+                <div class="income"></div>
+            </article>
+            <article class="expenses-container">
+                <h2>Utgifter💸 </h2>
+                <div class="expenses"></div>
+            </article>
+        </main>
 
-    <main class="container">
-        <article class="income-container">
-            <h2>Inkomster</h2>
-            <div class="income"></div>
-        </article>
+        <img src="bilder/money-g9c739e3f6_1920.jpg" alt="staplade kronor i en rad">
 
-        <article class="expenses-container">
-            <h2>Utgifter</h2>
-            <div class="expenses"></div>
-        </article>
-    </main>
-
-    <img src="bilder/money-g9c739e3f6_1920.jpg" alt="staplade kronor i en rad">
-
-</div>
+    </div>
 </body>
 </html>
