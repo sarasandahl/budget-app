@@ -1,4 +1,4 @@
-//börjar med att koppla på knappen och declara variabler
+//Börjar med att koppla på knappen och declara variabler utanför funktionen
 document.querySelector("button").addEventListener("click", countBudget)
 
 let expenseList = [];
@@ -6,71 +6,42 @@ let incomeList = [];
 
 function countBudget(e) {
     e.preventDefault();
-
-    console.log("button works");
-
+//Aktivera select; välja plus eller minus
     const option = document.querySelector("select");
-    console.log(option.value);
-
-//1. om användare väljer + ska description och value hamna i inkomst-lista diven
-//Pusha in kostnader i kostnadsLista
-//2. om användare väljer - ska description och value hamna i kostnad-lista i diven
-//Pusha in inkomster i inkomstLista
-
+//Declara kostnad i siffror och textbeskrivning i input-fält 
     const description = document.querySelector("#text").value;
     const value = document.querySelector("#number").value;
-
+//Pusha in inkomster i incomeList i div om användare väljer +
+//Pusha in kostnader i expenseList i div om användare väljer -
     if(option.value =="+") {
         // gör något om det är positivt värde
         incomeList.push(value)
         const div = document.querySelector(".income-container");
-
         div.innerHTML += `<li> ${description}    ${value}</li>`
     } else if (option.value == "-") {
         // gör något om det är negativt värde
         expenseList.push(value)
         const div = document.querySelector(".expenses-container");
-
         div.innerHTML += `<li> ${description}   ${value}</li>`
     } else {
         // gör något om inget val görs
         alert("App app app... du måste göra ett val");
     }
-
-    console.log(expenseList , incomeList)
-    //befintligt saldo i en annan div
-    var kostnadSumma = 0.0;
+    //förbered för befintligt saldo/slutbelopp i annan div
+    //declara och loopa igenom listorna och lagra totalt inkomst och kostnad
+    var minusSum = 0.0;
 
     for(var i= 0; i<expenseList.length; i++){
-    //console.log(kostnadLista[i]);
-        kostnadSumma += parseFloat(expenseList[i]);
+        minusSum += parseFloat(expenseList[i]);
     }
 
-    var inkomstSumma = 0.0;
+    var plusSum = 0.0;
 
     for( var i=0; i<incomeList.length; i++){
-    //console.log(inkomstLista[i]);
-        inkomstSumma += parseFloat(incomeList[i]);
+        plusSum += parseFloat(incomeList[i]);
     }
-
-    console.log(inkomstSumma, kostnadSumma)
-
-    const val= inkomstSumma-kostnadSumma
+    //saldo/slutbelopp i tredje div //vinst = inkomst - kostnad
+    const val= plusSum-minusSum
     const vinstDiv = document.querySelector(".transaction-container");
     vinstDiv.textContent = val
 }
-
-//Pusha in bägge i transaktionerLista
-
-//Få bara slutbelopp att hamna under Disponibelt belopp
-//visa vinst i en div
-
-//Loopa igenom listorna och lagra totalt inkomst och kostnad
-
-//vinst = inkomst - kostnad
-
-//Detta är en sämre kod. Det finns bättre lösningar
-//Den bör göras mer optimerat. 
-//Läser in samma data flera gånger
-//Läser in alla tre statements
-//Finns enklare lösningar v
