@@ -30,12 +30,12 @@ function countBudget(e) {
             // Gör något om inget val görs
             alert("App app app... du måste göra ett val");
         }
-    }
     // Ropa på nästa funktion
-    totalCalculation ();
+    totalCalculation();
+    }
 }
 // En till funktion för saldo/slutbelopp i en tredje div
-function totalCalculation () {
+function totalCalculation() {
     // Declara och loopa igenom listorna och lagra totalt inkomst och kostnad
     var minusSum = 0.0;
 
@@ -45,7 +45,7 @@ function totalCalculation () {
 
     var plusSum = 0.0;
 
-    for(var i=0; i<incomeList.length; i++){
+    for(var i= 0; i<incomeList.length; i++){
         plusSum += parseFloat(incomeList[i]);
     }
     // Uttäkningen; vinst = inkomst - kostnad, i en tredje div
