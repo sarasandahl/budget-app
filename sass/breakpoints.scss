@@ -1,3 +1,4 @@
+//Vill ändra om med flex så att de två container med inkomst och utgift-lista visas bredvid varandra
 @media screen and (min-width: 769px) {
     main {
         display: flex;
@@ -6,6 +7,7 @@
         }
     }
 }
+//Tredje breakpointen för stora skärmar vill jag bara ta upp mitten av skärmen så flexar "lådan" med everything till mitten samt ändrar bakgrundsfärger.
 @media screen and (min-width: 1025px) {
     body {
         display: flex;
@@ -23,4 +25,3 @@
     }
 
 }
-
