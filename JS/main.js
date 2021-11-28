@@ -17,11 +17,13 @@ function countBudget(e) {
         // gör något om det är positivt värde
         incomeList.push(value)
         const div = document.querySelector(".income-container");
+
         div.innerHTML += `<li> ${description}    ${value}</li>`
     } else if (option.value == "-") {
         // gör något om det är negativt värde
         expenseList.push(value)
         const div = document.querySelector(".expenses-container");
+
         div.innerHTML += `<li> ${description}   ${value}</li>`
     } else {
         // gör något om inget val görs
@@ -41,7 +43,7 @@ function countBudget(e) {
         plusSum += parseFloat(incomeList[i]);
     }
     //saldo/slutbelopp i tredje div //vinst = inkomst - kostnad
-    const val= plusSum-minusSum
+    const val = plusSum-minusSum
     const vinstDiv = document.querySelector(".transaction-container");
     vinstDiv.textContent = val
 }
